@@ -98,7 +98,8 @@ namespace SimpleIoc
         public void AddTransient(Type type, Func<object> factory, string key = "")
         {
             RegisterInfo regesterInfo = new RegisterInfo() { ImplementType = type, Factory = factory, LifeTime = LifeTime.Transient };
-            _registriesDictionary.Add(GetKey(type, key), regesterInfo);
+            lock (_syncLock)
+                _registriesDictionary.Add(GetKey(type, key), regesterInfo);
         }
         public void AddTransient<T>(Func<object> factory, string key = "")
         {

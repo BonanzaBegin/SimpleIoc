@@ -10,14 +10,16 @@ namespace SimpleIoc.Attributes
     [AttributeUsage(AttributeTargets.Constructor)]
     public class PreferAttribute : Attribute { }
 
-    [AttributeUsage(AttributeTargets.Constructor)]
+
+    [AttributeUsage(AttributeTargets.Property)]
     public class PropertyInjectionAttribute : Attribute { }
 
-    [AttributeUsage(AttributeTargets.Constructor)]
+
+    [AttributeUsage(AttributeTargets.Field)]
     public class FieldInjectionAttribute : Attribute { }
 
 
-    [AttributeUsage(AttributeTargets.Constructor)]
+    [AttributeUsage(AttributeTargets.Method)]
     public class MethodInjectionAttribute : Attribute { }
 
 
